@@ -6,7 +6,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
 {
     private T instance;
 
-    public T MyProperty
+    public T Instance
     {
         get
         {
