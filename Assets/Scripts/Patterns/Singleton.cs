@@ -4,14 +4,37 @@ using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Component
 {
+    private T instance;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public T MyProperty
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<T>();
+
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject(string.Format("[Singleton] {0}", typeof(T)));
+                    instance = obj.AddComponent<T>();
+                }
+
+            }
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }
