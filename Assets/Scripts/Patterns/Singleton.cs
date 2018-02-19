@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Component
 {
-    private T instance;
+    static private T instance;
 
-    public T Instance
+    static public T Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<T>();
-
-                if (instance == null)
-                {
-                    GameObject obj = new GameObject(string.Format("[Singleton] {0}", typeof(T)));
-                    instance = obj.AddComponent<T>();
-                }
-
+                Debug.Log(string.Format("Your should initialise {0} component first, null returned \n" +
+                    "Initialise it in Initialise component", typeof(T)));
+                return null;
             }
+
             return instance;
         }
+    }
+
+    static public void Initialise()
+    {
+        if (instance != null) return;
+        GameObject obj = new GameObject(string.Format("[Singleton] {0}", typeof(T)));
+        obj.AddComponent<T>();
     }
 
     private void Awake()

@@ -7,7 +7,7 @@ public class Initialisation : Singleton<Initialisation>
 
     private void Awake()
     {
-
+        RoomManagement.Initialise();
     }
 
 }

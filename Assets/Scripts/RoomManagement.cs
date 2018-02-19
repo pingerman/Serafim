@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomManagement : MonoBehaviour
+public class RoomManagement : Singleton<RoomManagement>
 {
     RaycastHit2D hitInfo;
     static GameObject room;
