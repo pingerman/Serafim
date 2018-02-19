@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class RoomManagement : MonoBehaviour
 {
-    private RaycastHit2D hitInfo;
     static private GameObject room;
-    private RayFromCamera rayCaster;
-
-    private void Start()
-    {
-        rayCaster = new RayFromCamera();    
-    }
+    private RaycastHit2D      hitInfo;
 
     private void Update()
     {
-        hitInfo =  rayCaster.CastRayFromMousePosAlongZAxis(LayerMask.GetMask("Room"));
+        hitInfo =  RayFromCamera.CastRayFromMousePosAlongZAxis(LayerMask.GetMask("Room"), true);
 
         if (hitInfo)
         {
