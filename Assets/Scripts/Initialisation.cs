@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Initialisation : Singleton<Initialisation>
+public class Initialisation : MonoBehaviour
 {
-
     private void Awake()
     {
-        RoomManagement.Initialise();
+        Singleton<RoomManagement>.Initialise();
     }
-
 }
