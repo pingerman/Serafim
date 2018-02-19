@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomManagement : Singleton<RoomManagement>
+public class RoomManagement : MonoBehaviour
 {
-    RaycastHit2D hitInfo;
-    static GameObject room;
+    private RaycastHit2D hitInfo;
+    static private GameObject room;
+    private RayFromCamera rayCaster;
+
+    private void Start()
+    {
+        rayCaster = new RayFromCamera();    
+    }
 
     private void Update()
     {
-        Ray fromCameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        hitInfo = Physics2D.Raycast(fromCameraRay.origin, fromCameraRay.direction, 50f, LayerMask.GetMask("Room"));
+        hitInfo =  rayCaster.CastRayFromMousePosAlongZAxis(LayerMask.GetMask("Room"));
 
         if (hitInfo)
         {
