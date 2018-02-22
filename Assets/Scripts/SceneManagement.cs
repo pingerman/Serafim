@@ -9,20 +9,14 @@ public class SceneManagement : MonoBehaviour
     private string       sceneForLoad;
     private string       btnTag;
 
-    void Update()
+    private void Start()
     {
-        //hitInfo = RayFromCamera.CastRayFromMousePosAlongZAxis(LayerMask.GetMask("UI"));
-        hitInfo = RayFromCamera.CastRayFromMousePosAlongZAxis(LayerMask.NameToLayer("UI"), true);
+        LevelText.linkToMethod += LoadLevel;
+    }
 
-        if (hitInfo)
-        {
-           
-            
-        }
-        else
-        {
-            Debug.Log("Not");
-        }
+    private void LoadLevel(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
 
@@ -30,10 +24,10 @@ public class SceneManagement : MonoBehaviour
 public enum SceneNames
 {
     Start,
-    SelectCharacter,
-    SelectLevel,
-    Battle,
     Level1,
     Level2,
-    Level3
+    Level3,
+    SelectCharacter,
+    SelectLevel,
+    Battle
 }
