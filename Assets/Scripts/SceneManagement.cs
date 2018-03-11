@@ -11,7 +11,7 @@ public class SceneManagement : MonoBehaviour
 
     private void Start()
     {
-        LevelText.linkToMethod += LoadLevel;
+        LevelText.loadLevelDelegate += LoadLevel;
     }
 
     private void LoadLevel(string sceneName)
