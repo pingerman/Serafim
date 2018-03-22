@@ -5,34 +5,40 @@ using UnityEngine;
 public class RoomManagement : MonoBehaviour
 {
     static private GameObject room;
-    private RaycastHit2D      hitInfo;
+    private RaycastHit2D hitInfo;
 
     private void Update()
     {
-        hitInfo =  RayFromCamera.CastRayFromMousePosAlongZAxis(LayerMask.GetMask("Room"), true);
+
+        hitInfo = fromCameraToRay();
 
         if (hitInfo)
         {
+            Debug.Log("Hit");
             room = hitInfo.transform.gameObject;
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                OpenNeighborhoodRooms(room.transform);
-                HideBlackPanel();   
+                openNeighborhoodRooms(room.transform);
+                hideBlackPanel();
             }
         }
     }
 
-    public static void HideBlackPanel()
+    public static void hideBlackPanel()
     {
         room.transform.Find("Black Panel").gameObject.SetActive(false);
     }
 
-    private void OpenNeighborhoodRooms(Transform room)
+    private void openNeighborhoodRooms(Transform room)
     {
-        foreach (Transform item in room)
-        {
-            item.gameObject.SetActive(true);
-        }
+        foreach (Transform item in room) item.gameObject.SetActive(true);
+    }
+
+    private RaycastHit2D fromCameraToRay()
+    {
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hitInfo = Physics2D.Raycast(cameraRay.origin, cameraRay.direction, 30f, LayerMask.GetMask("Room"));
+        return hitInfo;
     }
 }

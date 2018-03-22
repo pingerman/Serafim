@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 107292015}
   - component: {fileID: 107292014}
   - component: {fileID: 107292016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room A
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 141177403}
   - component: {fileID: 141177404}
   - component: {fileID: 141177405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room C
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 181976601}
   - component: {fileID: 181976602}
   - component: {fileID: 181976603}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room E
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 198283788}
   - component: {fileID: 198283789}
   - component: {fileID: 198283790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room F
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 255021852}
   - component: {fileID: 255021853}
   - component: {fileID: 255021854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room D
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 1087022361}
   - component: {fileID: 1087022362}
   - component: {fileID: 1087022363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room B
   m_TagString: Room
   m_Icon: {fileID: 0}

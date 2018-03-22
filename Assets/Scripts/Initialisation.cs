@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class Initialisation : MonoBehaviour
 {
-    private void Awake()
-    {
-        Singleton<RoomManagement>.Initialise();
-        Singleton<SceneManagement>.Initialise();
-    }
+
 }

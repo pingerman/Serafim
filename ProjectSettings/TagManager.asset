@@ -9,6 +9,7 @@ TagManager:
   - Level2
   - Level3
   - Room
+  - Character Status Panel
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - Level Button
-  - 
+  - Room
   - 
   - 
   - 

@@ -1,38 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
 
 public class CharacterStatusWhenSelect : MonoBehaviour
 {
     Animator anim;
     bool appearingFlag;
+    List<RaycastResult> result;
+    GraphicRaycaster graphicRaycaster;
+    PointerEventData pointerEveneData;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        result = new List<RaycastResult>();
+        pointerEveneData = new PointerEventData(null);
+        graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && appearingFlag)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-            if (hit)
-                if (hit.transform.tag != "Character Status Panel" && appearingFlag) anim.SetTrigger("Off");
-            else anim.SetTrigger("Off");      
+            pointerEveneData.position = Input.mousePosition;
+            graphicRaycaster.Raycast(pointerEveneData, result);
         }
     }
 
-    private void LateUpdate()
+    public void SwitchAppearingFlag()
     {
-        appearingFlag = true;
+        appearingFlag = !appearingFlag;
     }
 
-    private void OnDisable()
+    public void TriggerDissapearing()
     {
-        appearingFlag = false;
+        anim.SetTrigger("Off");
     }
 }

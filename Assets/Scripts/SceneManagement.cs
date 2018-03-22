@@ -5,19 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    private RaycastHit2D hitInfo;
-    private string       sceneForLoad;
-    private string       btnTag;
 
-    private void Start()
-    {
-        LevelText.loadLevelDelegate += LoadLevel;
-    }
-
-    private void LoadLevel(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 }
 
 
