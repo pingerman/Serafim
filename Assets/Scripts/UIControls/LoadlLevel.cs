@@ -12,7 +12,10 @@ public class LoadlLevel : MonoBehaviour
             SceneManager.LoadScene("SelectCharacter");
             return;
         }
-
-        SceneManager.LoadScene(sceneName);
+        else
+        {
+            PlayerPrefs.SetString("SelectedLevelForLoad", sceneName);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

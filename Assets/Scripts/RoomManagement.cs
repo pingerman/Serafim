@@ -10,13 +10,11 @@ public class RoomManagement : MonoBehaviour
     private void Update()
     {
 
-        hitInfo = fromCameraToRay();
+        hitInfo = fromScreenRayInfo();
 
         if (hitInfo)
         {
-            Debug.Log("Hit");
             room = hitInfo.transform.gameObject;
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 openNeighborhoodRooms(room.transform);
@@ -35,7 +33,7 @@ public class RoomManagement : MonoBehaviour
         foreach (Transform item in room) item.gameObject.SetActive(true);
     }
 
-    private RaycastHit2D fromCameraToRay()
+    private RaycastHit2D fromScreenRayInfo()
     {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hitInfo = Physics2D.Raycast(cameraRay.origin, cameraRay.direction, 30f, LayerMask.GetMask("Room"));
