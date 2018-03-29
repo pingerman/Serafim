@@ -1,7 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Класс, реализующий шаблон проектирования синглтон, нужен для создания единственных объектов, переходящих между сценами
+/// </summary>
+/// <typeparam name="T">Тип объекта</typeparam>
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     static private T instance;
@@ -22,5 +24,17 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             
             return instance;
         }
+    }
+
+    void Awake()
+    {
+        if (instance == null) instance = this as T;
+        else Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
+
+    static public void Initialise()
+    {
+        var ins = Instance;
     }
 }

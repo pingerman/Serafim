@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
-
+// Пока этот класс не работает, не стоит обращать внимание
 public class CharacterStatusWhenSelect : MonoBehaviour
 {
     Animator anim;
@@ -23,11 +22,11 @@ public class CharacterStatusWhenSelect : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && appearingFlag)
-        {
-            pointerEveneData.position = Input.mousePosition;
-            graphicRaycaster.Raycast(pointerEveneData, result);
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0) && appearingFlag)
+        //{
+        //    pointerEveneData.position = Input.mousePosition;
+        //    graphicRaycaster.Raycast(pointerEveneData, result);
+        //}
     }
 
     public void SwitchAppearingFlag()

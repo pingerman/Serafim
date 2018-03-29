@@ -676,7 +676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159685138}
+      - m_Target: {fileID: 1965832041}
         m_MethodName: LoadLevelProcess
         m_Mode: 1
         m_Arguments:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159685138}
+      - m_Target: {fileID: 2093973390}
         m_MethodName: LoadLevelProcess
         m_Mode: 1
         m_Arguments:

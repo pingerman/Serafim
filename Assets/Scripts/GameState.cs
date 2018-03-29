@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Класс, определяющий состояние игровой сессии
+/// </summary>
 public class GameState : Singleton<GameState>
 {
     private State gameState;
@@ -17,11 +20,3 @@ public class GameState : Singleton<GameState>
     }
 }
 
-public enum State
-{
-    Start,
-    SelectLevel,
-    SelectCharacter,
-    Modal,
-    Play
-}
