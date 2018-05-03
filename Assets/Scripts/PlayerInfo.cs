@@ -21,7 +21,7 @@ public class PlayerInfo : MonoBehaviour {
         {
             Debug.Log("Player Dead!");
             SceneManager.UnloadScene("Battle");
-            BattleManagement.Instance.EnemyWin();
+            BattleManagement.Instance.EnemyWin(); 
         }
         else
         {
