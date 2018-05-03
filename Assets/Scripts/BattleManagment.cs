@@ -9,7 +9,8 @@ public class BattleManagement : Singleton<BattleManagement>
     /// <summary>
     /// Сюда передается пиктограмма врага на карте уровня, на которую мы кликнули, передается через рейкастинг из активной камеры в сцену
     /// </summary>
-    Enemie enemie;
+    [HideInInspector]
+    public IMapObject obj;
 
     /// <summary>
     /// Здесь хранится список врагов, с которыми вы столкнетесь на сцене битвы
@@ -26,15 +27,19 @@ public class BattleManagement : Singleton<BattleManagement>
         if (hitInfo)
         {
             // Извлекаем ссылку на активного врага
-            enemie = hitInfo.transform.GetComponent<Enemie>();
+            obj = hitInfo.transform.GetComponent<Enemie>();
 
             // Указатель над иконкой врага, ожидаем клик левой кнопкой мыши
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                //вызываем EnemiesSet() через метод EnemiesSet() у enemie, чтобы передать в BattleManagment список врагов
-                enemie.EnemiesSet();
+                Enemie enemie = obj as Enemie;
+                if (enemie != null)
+                {
+                    //вызываем EnemiesSet() через метод EnemiesSet() у enemie, чтобы передать в BattleManagment список врагов
+                    obj.EnemiesSet();
+                }
                 // Переходим на сцену битвы
-                battleStart();
+                obj.GetTransform().GetComponent<LoadlLevel>().LoadLevelProcess();
             }
         }
     }
@@ -58,6 +63,18 @@ public class BattleManagement : Singleton<BattleManagement>
         }
     }
 
+    public void EnemyDestroy()
+    {
+        Destroy(obj.GetTransform().gameObject);
+        obj = null;
+        
+    }
+
+    public void EnemyWin()
+    {
+        obj = null;
+    }
+
     /// <summary>
     /// Метод, возвращающий список врагов для битвы
     /// </summary>
@@ -65,14 +82,6 @@ public class BattleManagement : Singleton<BattleManagement>
     public Enemy[] GetEnemies()
     {
         return enemies;
-    }
-
-    /// <summary>
-    /// Переход в битву
-    /// </summary>
-    void battleStart()
-    {
-        SceneManager.LoadScene("Battle");
     }
 
     /// <summary>

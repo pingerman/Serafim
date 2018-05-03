@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInfo : MonoBehaviour {
@@ -19,7 +20,8 @@ public class PlayerInfo : MonoBehaviour {
         if (playerHealth <= 0f)
         {
             Debug.Log("Player Dead!");
-            Application.LoadLevel(0);
+            SceneManager.UnloadScene("Battle");
+            BattleManagement.Instance.EnemyWin();
         }
         else
         {

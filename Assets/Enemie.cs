@@ -3,7 +3,7 @@
 /// <summary>
 /// Класс, определяющий вражескую единицу
 /// </summary>
-public class Enemie : MonoBehaviour
+public class Enemie : MonoBehaviour, IMapObject
 {
     public EnemyObject[] enemies;
 
@@ -19,5 +19,14 @@ public class Enemie : MonoBehaviour
     {
         Debug.Log("Enemies Set!");
         BattleManagement.Instance.EnemiesSet(enemies);
+    }
+
+    /// <summary>
+    /// Получаем трансформ объекта (реализация для интерфейса IMapObject)
+    /// </summary>
+    /// <returns>Трансформ объекта</returns>
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Room
   - Character Status Panel
   - Enemy
+  - Battle Camera
   layers:
   - Default
   - TransparentFX

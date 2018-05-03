@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyPanelInitialisation : MonoBehaviour {
 
@@ -23,7 +24,9 @@ public class EnemyPanelInitialisation : MonoBehaviour {
             if (panel.gameObject.activeSelf) return;
         }
         Debug.Log("Victory!");
-        Application.LoadLevel(0);
+        SceneManager.UnloadScene("Battle");
+        BattleManagement.Instance.EnemyDestroy();
+        RoomManagement.Instance.GoNext();
     }
 
 }
