@@ -10,6 +10,8 @@ TagManager:
   - Level3
   - Room
   - Character Status Panel
+  - Enemy
+  - Battle Camera
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - Level Button
   - Room
-  - 
+  - Enemy
   - 
   - 
   - 

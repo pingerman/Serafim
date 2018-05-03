@@ -20,12 +20,22 @@ public class LoadlLevel : MonoBehaviour
         PlayerPrefs.SetString("SelectedLevelForLoad", sceneName);
 
         // Если мы взаимодействуем с этим классом из сцены с выбором уровня, сначала нас перекинет в сцену выбора персонажа
-        if (SceneManager.GetActiveScene().name == "SelectLevel" )
+        if (SceneManager.GetActiveScene().name == "SelectLevel")
         {
             SceneManager.LoadScene("SelectCharacter");
             return;
         }
         // В любом другом уровне перекинет в указанную в переменной sceneName сцену
-        else SceneManager.LoadScene(sceneName);
+
+        if (sceneName == "Battle")
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+
+
     }
 }

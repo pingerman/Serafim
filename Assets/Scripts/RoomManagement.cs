@@ -19,19 +19,25 @@ public class RoomManagement : Singleton<RoomManagement>
         // Если указатель над комнатой
         if (hitInfo) 
         {
+            Debug.Log("Hit!");
             // Извлекаем ссылку на активную комнату
             room = hitInfo.transform.gameObject; 
 
             // Указатель над комнатой, ожидаем клик левой кнопкой мыши
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && BattleManagement.Instance.obj == null)
             {
-                // Открываем дочерние коридоры и комнаты
-                openNeighborhoodRooms(room.transform);
-
-                // Убираем серый фон с активной комнаты
-                hideBlackPanel();
+                GoNext();
             }
         }
+    }
+
+    public void GoNext()
+    {
+        // Открываем дочерние коридоры и комнаты
+        openNeighborhoodRooms(room.transform);
+
+        // Убираем серый фон с активной комнаты
+        hideBlackPanel();
     }
 
     /// <summary>
