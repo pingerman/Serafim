@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IMapObject {
-
-    Transform GetTransform();
-
-    void EnemiesSet();
+public interface IMapObject
+{
+    void Process();
 }
