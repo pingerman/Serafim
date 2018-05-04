@@ -51,6 +51,15 @@ public class Player : Singleton<Player>
     }
 
     /// <summary>
+    /// Получение значения количества жизней игрока
+    /// </summary>
+    /// <returns>количество жизней</returns>
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    /// <summary>
     /// Установка требуемого количества защиты игрока
     /// </summary>
     /// <param name="value">Количество защиты</param>

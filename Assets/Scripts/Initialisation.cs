@@ -9,5 +9,6 @@ public class Initialisation : MonoBehaviour
     {
         //TODO: Стоит перенести сюда все сущности, которые перемещаются из уровня в уровень     
         RoomManagement.Initialise();
+        BattleManagement.Initialise();
     }
 }

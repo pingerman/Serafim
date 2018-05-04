@@ -41,6 +41,15 @@ public enum MainWeapon
 }
 
 /// <summary>
+/// Список типов врагов
+/// </summary>
+public enum EnemyType
+{
+    Soldier,
+    Robot
+}
+
+/// <summary>
 /// Список состояний игровой сессии
 /// </summary>
 public enum State

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dabb43ce29a4b4abc4bad76723bbd8, type: 3}
+  m_Name: Soldier[0]
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 28ace2a0a2106d24f8a54d276b303360, type: 3}
+  type: 0
+  level: 0
+  health: 10
+  defence: 1
+  attack: 1
