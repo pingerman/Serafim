@@ -6,6 +6,7 @@ public class Room : MonoBehaviour, IMapObject
 {
     public void Process()
     {
+        Debug.Log("Room Process");
         hideBlackPanel();
         openNeighborhoodRooms();
     }

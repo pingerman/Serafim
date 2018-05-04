@@ -23,7 +23,7 @@ public class BattleManager : Singleton<BattleManager>
         enemies = obj.GetEnemies();
     }
 
-    public void EnemyDestroy()
+    public void EnemyLose()
     {
         Destroy(obj.gameObject);
         obj = null;

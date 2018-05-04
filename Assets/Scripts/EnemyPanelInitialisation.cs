@@ -23,8 +23,8 @@ public class EnemyPanelInitialisation : MonoBehaviour
     {
         foreach (EnemyPanel panel in enemyPanel) if (panel.gameObject.activeSelf) return;
         Debug.Log("Victory!");
+        BattleManager.Instance.EnemyLose();
         SceneManager.UnloadScene("Battle");
-        BattleManager.Instance.EnemyDestroy();
     }
 
 }

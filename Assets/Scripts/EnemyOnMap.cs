@@ -10,6 +10,7 @@ public class EnemyOnMap : MonoBehaviour, IMapObject
 
     public void Process()
     {
+        Debug.Log("Enemy Process");
         SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
         BattleManager.Instance.obj = this;
     }
