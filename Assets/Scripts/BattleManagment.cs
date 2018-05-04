@@ -27,20 +27,20 @@ public class BattleManagement : Singleton<BattleManagement>
         if (hitInfo)
         {
             // Извлекаем ссылку на активного врага
-            obj = hitInfo.transform.GetComponent<Enemie>();
+           // obj = hitInfo.transform.GetComponent<Enemy>();
 
             // Указатель над иконкой врага, ожидаем клик левой кнопкой мыши
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Enemie enemie = obj as Enemie;
+                Enemy enemie = obj as Enemy;
                 if (enemie != null)
                 {
                     //вызываем EnemiesSet() через метод EnemiesSet() у enemie, чтобы передать в BattleManagment список врагов
-                    obj.EnemiesSet();
+                //    obj.EnemiesSet();
                 }
                 // Переходим на сцену битвы
-                obj.GetTransform().GetComponent<LoadlLevel>().LoadLevelProcess();
-            }
+              //  obj.GetTransform().GetComponent<LoadlLevel>().LoadLevelProcess();
+            }       
         }
     }
 
@@ -65,7 +65,7 @@ public class BattleManagement : Singleton<BattleManagement>
 
     public void EnemyDestroy()
     {
-        Destroy(obj.GetTransform().gameObject);
+        //Destroy(obj.GetTransform().gameObject);
         obj = null;
         
     }

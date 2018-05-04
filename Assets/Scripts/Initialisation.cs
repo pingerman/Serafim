@@ -8,7 +8,8 @@ public class Initialisation : MonoBehaviour
     void Start()
     {
         //TODO: Стоит перенести сюда все сущности, которые перемещаются из уровня в уровень     
-        RoomManagement.Initialise();
+        //RoomManagement.Initialise();
         BattleManagement.Initialise();
+        MapManager.Initialise();
     }
 }

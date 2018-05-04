@@ -26,7 +26,7 @@ public class EnemyPanelInitialisation : MonoBehaviour {
         Debug.Log("Victory!");
         SceneManager.UnloadScene("Battle");
         BattleManagement.Instance.EnemyDestroy();
-        RoomManagement.Instance.GoNext();
+        //RoomManagement.Instance.GoNext();
     }
 
 }
