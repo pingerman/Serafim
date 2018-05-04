@@ -8,7 +8,7 @@ public class MapManager : Singleton<MapManager>
     /// <summary>
     /// Сюда передается комната, на которую мы кликнули, передается через рейкастинг из активной камеры в сцену
     /// </summary>
-    [SerializeField] LayerMask mapObjectsMask;
+    public LayerMask mapObjectsMask;
 
     void Update()
     {

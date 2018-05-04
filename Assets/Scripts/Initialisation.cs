@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Класс, инициализирующий игру требуемыми сущностями
+/// Класс, при запуске, инициализирующий игру требуемыми сущностями
 /// </summary>
 public class Initialisation : MonoBehaviour
 {
+    [SerializeField] LayerMask mapObjectsMask;
+
     void Start()
-    {
-        //TODO: Стоит перенести сюда все сущности, которые перемещаются из уровня в уровень     
-        //RoomManagement.Initialise();
+    { 
         BattleManagement.Initialise();
-        MapManager.Initialise();
+        MapManager.Instance.mapObjectsMask = mapObjectsMask;
     }
 }

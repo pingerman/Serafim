@@ -1429,7 +1429,6 @@ GameObject:
   - component: {fileID: 1045402918}
   - component: {fileID: 1045402917}
   - component: {fileID: 1045402916}
-  - component: {fileID: 1045402915}
   - component: {fileID: 1045402914}
   m_Layer: 5
   m_Name: Character Status 2
@@ -1475,17 +1474,6 @@ MonoBehaviour:
   defence: 2
   mainWeapon: 0
   additionalWeapon: 2
---- !u!114 &1045402915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1045402912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b92e75713614a4cb23319f74424dbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1045402916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,17 +2215,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045402915}
-        m_MethodName: TriggerDissapearing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045402914}
         m_MethodName: CreateProcess
         m_Mode: 1
@@ -2771,7 +2748,6 @@ GameObject:
   - component: {fileID: 1811466655}
   - component: {fileID: 1811466654}
   - component: {fileID: 1811466653}
-  - component: {fileID: 1811466652}
   - component: {fileID: 1811466651}
   m_Layer: 5
   m_Name: Character Status 3
@@ -2817,17 +2793,6 @@ MonoBehaviour:
   defence: 2
   mainWeapon: 0
   additionalWeapon: 1
---- !u!114 &1811466652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1811466649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b92e75713614a4cb23319f74424dbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1811466653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3027,17 +2992,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: TriggerDissapearing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1490180840}
         m_MethodName: CreateProcess
         m_Mode: 1
@@ -3234,17 +3188,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1811466652}
-        m_MethodName: TriggerDissapearing
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1811466651}
         m_MethodName: CreateProcess
         m_Mode: 1
