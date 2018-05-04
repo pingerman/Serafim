@@ -9,7 +9,6 @@ public class Initialisation : MonoBehaviour
 
     void Start()
     { 
-        BattleManagement.Initialise();
         MapManager.Instance.mapObjectsMask = mapObjectsMask;
     }
 }

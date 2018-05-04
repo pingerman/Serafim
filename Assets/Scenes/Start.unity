@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapObjectsMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
 --- !u!4 &1064379626
 Transform:
   m_ObjectHideFlags: 0

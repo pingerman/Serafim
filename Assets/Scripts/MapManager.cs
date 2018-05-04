@@ -14,7 +14,7 @@ public class MapManager : Singleton<MapManager>
     {
         var hitInfo = fromScreenRayInfo(mapObjectsMask);
 
-        if (hitInfo && Input.GetKeyDown(KeyCode.Mouse0) && BattleManagement.Instance.obj == null) 
+        if (hitInfo && Input.GetKeyDown(KeyCode.Mouse0)) 
         {
             IMapObject obj = hitInfo.transform.GetComponent<IMapObject>();
 

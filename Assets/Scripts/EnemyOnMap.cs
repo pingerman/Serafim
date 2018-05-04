@@ -1,21 +1,51 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Класс, определяющий вражескую единицу
 /// </summary>
 public class EnemyOnMap : MonoBehaviour, IMapObject
 {
-    public EnemyObject[] enemies;
+    public EnemyTemplate[] enemies;
 
     public void Process()
     {
-        throw new System.NotImplementedException();
+        SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
+        BattleManager.Instance.obj = this;
     }
 
-    /*void OnMouseDown()
+    /// <summary>
+    /// Возвращает список врагов компоненту BattleManager
+    /// </summary>
+    /// <returns></returns>
+
+    public Enemy[] GetEnemies()
     {
-        //TODO вызвать панель боя    
-    }*/
+        return ConvertTemplatesToEnemyArray(enemies);
+    }
+
+    /// <summary>
+    /// Выстраивает на основании ScriptableObject врагов
+    /// </summary>
+    /// <returns>Массив врагов</returns>
+    private Enemy[] ConvertTemplatesToEnemyArray(EnemyTemplate[] enemies)
+    {
+        Enemy[] enemyObjects = new Enemy[enemies.Length];
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemyObjects[i] = new Enemy();
+            enemyObjects[i].icon = enemies[i].icon;
+            enemyObjects[i].type = enemies[i].type;
+            enemyObjects[i].level = enemies[i].level;
+            enemyObjects[i].health = enemies[i].health;
+            enemyObjects[i].defence = enemies[i].defence;
+            enemyObjects[i].attack = enemies[i].attack;
+        }
+
+        return enemyObjects;
+    }
+
 
     /// <summary>
     /// Сохраняем список врагов текущей единицы в синглтон-хранилище для битвы
