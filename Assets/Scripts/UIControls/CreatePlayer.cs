@@ -40,5 +40,6 @@ public class CreatePlayer : MonoBehaviour
         Player.Instance.SetDefence(defence);
         Player.Instance.SetMainWeapon(mainWeapon);
         Player.Instance.SetAdditionalWeapon(additionalWeapon);
+        GetComponentInParent<Animator>().SetTrigger("Off");
     }
 }

@@ -3,13 +3,16 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerInfo : MonoBehaviour {
+public class PlayerInfo : MonoBehaviour
+{
 
     static Slider healthSlider;
-	
-	void Awake () {
+
+    void Awake()
+    {
+        Debug.Log("Player info");
         healthSlider = transform.Find("Health Slider").GetComponent<Slider>();
-        healthSlider.maxValue = Player.Instance.GetHealth();
+        healthSlider.maxValue = Player.Instance.GetMaxHealth();
         healthSlider.value = Player.Instance.GetHealth();
     }
 
@@ -21,7 +24,7 @@ public class PlayerInfo : MonoBehaviour {
         {
             Debug.Log("Player Dead!");
             SceneManager.UnloadScene("Battle");
-            BattleManagement.Instance.EnemyWin(); 
+            BattleManager.Instance.EnemyWin();
         }
         else
         {
