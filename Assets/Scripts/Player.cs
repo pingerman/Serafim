@@ -13,7 +13,9 @@ public class Player : Singleton<Player>
     /// <summary>
     /// Количество жизней игрока
     /// </summary>
-    float health;
+    float currentHealth;
+
+    float maxHealth;
 
     /// <summary>
     /// Количество защиты игрока
@@ -35,10 +37,11 @@ public class Player : Singleton<Player>
     {
         Debug.Log("Player has been created: " +
             "skill: " + skill + "\n" +
-            "health: " + health + "\n" +
+            "health: " + currentHealth + "\n" +
             "defence: " + defence + "\n" +
             "mainWeapon: " + mainWeapon + "\n" +
             "additionalWeapon: " + additionalWeapon);
+        maxHealth = currentHealth;
     }
 
     /// <summary>
@@ -47,7 +50,7 @@ public class Player : Singleton<Player>
     /// <param name="value">Количество жизней</param>
     public void SetHealth(float value)
     {
-        health = value;
+        currentHealth = value;
     }
 
     /// <summary>
@@ -56,7 +59,12 @@ public class Player : Singleton<Player>
     /// <returns>количество жизней</returns>
     public float GetHealth()
     {
-        return health;
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     /// <summary>

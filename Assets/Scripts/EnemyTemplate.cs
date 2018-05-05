@@ -5,7 +5,7 @@
 /// </summary>
 [System.Serializable]
 [CreateAssetMenu(fileName = "Enemy", menuName = "Enemies/Enemy")]
-public class EnemyObject : ScriptableObject {
+public class EnemyTemplate : ScriptableObject {
 
     /// <summary>
     /// Иконка врага

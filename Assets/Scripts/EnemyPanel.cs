@@ -4,9 +4,11 @@ using UnityEngine.UI;
 /// <summary>
 /// Панель с данными врага в режиме битвы, нажимая на которую игрок наносит врагу урон
 /// </summary>
-public class EnemyPanel : MonoBehaviour {
+public class EnemyPanel : MonoBehaviour
+{
 
     public Animator enemyAnim;
+
     Enemy enemy;
     Image enemyIcon;
     Slider healthSlider;
@@ -17,7 +19,7 @@ public class EnemyPanel : MonoBehaviour {
     public void Initialise()
     {
         enemyAnim.gameObject.SetActive(true);
-        enemyIcon = transform.Find("Enemie Icon").GetComponent<Image>();
+        enemyIcon = transform.Find("Enemy Icon").GetComponent<Image>();
         healthSlider = transform.Find("Health Slider").GetComponent<Slider>();
     }
 

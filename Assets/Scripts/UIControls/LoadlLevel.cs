@@ -35,7 +35,5 @@ public class LoadlLevel : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
-
-
     }
 }
