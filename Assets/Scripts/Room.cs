@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour, IMapObject
 {
+    public List<GameObject> DependedMapObjects = new List<GameObject>();
+
     public void Process()
     {
         Debug.Log("Room Process");
@@ -25,6 +27,16 @@ public class Room : MonoBehaviour, IMapObject
     /// <param name="room"></param>
     void openNeighborhoodRooms()
     {
-        foreach (Transform item in transform) item.gameObject.SetActive(true);
+        //foreach (Transform item in transform) item.gameObject.SetActive(true);
+        SetPathActive(DependedMapObjects);
+    }
+
+    /// <summary>
+    /// Активация прилежащего к комнате корридора
+    /// </summary>
+    /// <param name="path">список геймобжей корридоров</param>
+    void SetPathActive(List<GameObject> path)
+    {
+        path.ForEach((x) => { x.SetActive(true); });
     }
 }
