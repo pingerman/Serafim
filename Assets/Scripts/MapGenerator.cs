@@ -89,28 +89,33 @@ public class MapGenerator : MonoBehaviour {
         roomList.Add(room);
         for (int i = 0; i < rooms.Count; i++)
         {
-            var state = Mathf.CeilToInt(Random.Range(1, 3));
+            var state = Mathf.CeilToInt(Random.Range(1, 6));
             switch (state)
             {
                 case 1:
-                    room = Instantiate(RoomPrefab, RoomsParent);
-                    room.transform.localPosition = new Vector3(roomsPositions[rooms[i]].x, roomsPositions[rooms[i]].y, 0);
-                    room.SetActive(false);
-                    roomList.Add(room);
-                    break;
                 case 2:
                     room = Instantiate(RoomPrefab, RoomsParent);
                     room.transform.localPosition = new Vector3(roomsPositions[rooms[i]].x, roomsPositions[rooms[i]].y, 0);
                     room.SetActive(false);
                     roomList.Add(room);
-                    Instantiate(EnemyPrefab, room.transform);
                     break;
                 case 3:
+                case 4:
                     room = Instantiate(RoomPrefab, RoomsParent);
                     room.transform.localPosition = new Vector3(roomsPositions[rooms[i]].x, roomsPositions[rooms[i]].y, 0);
                     room.SetActive(false);
                     roomList.Add(room);
-                    Instantiate(ItemPrefab, room.transform);
+                    var enemy = Instantiate(EnemyPrefab, room.transform);
+                    enemy.GetComponent<EnemyOnMap>().SetRandomEnemy(LevelSettings.Instance.enemies);
+
+                    break;
+                case 5:
+                    room = Instantiate(RoomPrefab, RoomsParent);
+                    room.transform.localPosition = new Vector3(roomsPositions[rooms[i]].x, roomsPositions[rooms[i]].y, 0);
+                    room.SetActive(false);
+                    roomList.Add(room);
+                    var item = Instantiate(ItemPrefab, room.transform);
+                    item.GetComponent<ItemOnMap>().SetRandomItem(LevelSettings.Instance.items);
                     break;
                 default: break;
             }

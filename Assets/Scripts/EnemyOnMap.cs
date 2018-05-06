@@ -8,6 +8,9 @@ public class EnemyOnMap : MonoBehaviour, IMapObject
 {
     public EnemyTemplate[] enemies;
 
+    /// <summary>
+    /// Метод, выполняющий действие при нажатии на иконку врага на карте
+    /// </summary>
     public void Process()
     {
         Debug.Log("Enemy Process");
@@ -18,8 +21,7 @@ public class EnemyOnMap : MonoBehaviour, IMapObject
     /// <summary>
     /// Возвращает список врагов компоненту BattleManager
     /// </summary>
-    /// <returns></returns>
-
+    /// <returns>Список врагов</returns>
     public Enemy[] GetEnemies()
     {
         return ConvertTemplatesToEnemyArray(enemies);
@@ -47,22 +49,18 @@ public class EnemyOnMap : MonoBehaviour, IMapObject
         return enemyObjects;
     }
 
-
     /// <summary>
-    /// Сохраняем список врагов текущей единицы в синглтон-хранилище для битвы
+    /// Метод, устанавливающий отряд врагов из рандомного списка (список берется из LevelSettings)
     /// </summary>
-    //public void EnemiesSet()
-    //{
-    //    Debug.Log("Enemies Set!");
-    //    BattleManagement.Instance.EnemiesSet(enemies);
-    //}
-
-    ///// <summary>
-    ///// Получаем трансформ объекта (реализация для интерфейса IMapObject)
-    ///// </summary>
-    ///// <returns>Трансформ объекта</returns>
-    //public Transform GetTransform()
-    //{
-    //    return transform;
-    //}
+    /// <param name="enemyTypes">Список типов врагов для рандомной выборки</param>
+    public void SetRandomEnemy(EnemyTemplate[] enemyTypes)
+    {
+        var enemyNum = Mathf.CeilToInt(Random.Range(1, 3));
+        enemies = new EnemyTemplate[enemyNum];
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            var randomIndex = Mathf.CeilToInt(Random.Range(0, enemyTypes.Length));
+            enemies[i] = enemyTypes[randomIndex];
+        }
+    }
 }

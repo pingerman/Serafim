@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 159685139}
   - component: {fileID: 159685141}
   - component: {fileID: 159685138}
+  - component: {fileID: 159685142}
   m_Layer: 5
   m_Name: Level 1
   m_TagString: Level1
@@ -143,7 +144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -218, y: 375}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &159685138
@@ -241,8 +242,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 159685142}
+        m_MethodName: SetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &159685142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159685136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3317c3ca1fd2cda46be587523b842b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 11400000, guid: c86ff1140cda8714f9a4f78ed04ad533, type: 2}
+  - {fileID: 11400000, guid: 3d49b1c5076939849ae4253492050db4, type: 2}
+  items:
+  - {fileID: 11400000, guid: 1fc772a773d949f48a9ad6a4243a9f7a, type: 2}
 --- !u!1 &563818884
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +623,7 @@ GameObject:
   - component: {fileID: 1965832039}
   - component: {fileID: 1965832042}
   - component: {fileID: 1965832041}
+  - component: {fileID: 1965832043}
   m_Layer: 5
   m_Name: Level 2
   m_TagString: Level2
@@ -618,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0000009536743}
+  m_AnchoredPosition: {x: 175, y: 125}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965832039
@@ -665,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2887c54a2ccfb2448bade23e2b09bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level2
+  sceneName: Level
 --- !u!114 &1965832042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,8 +745,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1965832043}
+        m_MethodName: SetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1965832043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965832037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3317c3ca1fd2cda46be587523b842b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 11400000, guid: 3d49b1c5076939849ae4253492050db4, type: 2}
+  - {fileID: 11400000, guid: 589fdb0adfc5e64499d9d34fb6960b68, type: 2}
+  items:
+  - {fileID: 11400000, guid: 1fc772a773d949f48a9ad6a4243a9f7a, type: 2}
+  - {fileID: 11400000, guid: b40d953e982bcb14d83b31a15a310be7, type: 2}
 --- !u!1 &1968872965
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +942,7 @@ GameObject:
   - component: {fileID: 2093973391}
   - component: {fileID: 2093973393}
   - component: {fileID: 2093973390}
+  - component: {fileID: 2093973394}
   m_Layer: 5
   m_Name: Level 3
   m_TagString: Level3
@@ -908,7 +966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -393}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2093973390
@@ -922,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2887c54a2ccfb2448bade23e2b09bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level3
+  sceneName: Level
 --- !u!114 &2093973391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,5 +1064,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2093973394}
+        m_MethodName: SetLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2093973394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093973388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3317c3ca1fd2cda46be587523b842b72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 11400000, guid: 589fdb0adfc5e64499d9d34fb6960b68, type: 2}
+  items:
+  - {fileID: 11400000, guid: b40d953e982bcb14d83b31a15a310be7, type: 2}
+  - {fileID: 11400000, guid: 12c0fcbbf7ea28746914e75bfc28af1a, type: 2}

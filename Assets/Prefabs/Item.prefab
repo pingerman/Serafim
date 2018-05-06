@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4165950546868962}
   - component: {fileID: 212605723248555182}
   - component: {fileID: 61209095697175366}
-  - component: {fileID: 114301280845072208}
-  m_Layer: 10
-  m_Name: Enemy
-  m_TagString: Enemy
+  - component: {fileID: 114839823559408798}
+  m_Layer: 11
+  m_Name: Item
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114301280845072208
+--- !u!114 &114839823559408798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,10 +75,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722579018215086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09740e63389b58340a2d2ed4c46bed48, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5b46b179ee2514690b07314d676bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  item: {fileID: 0}
 --- !u!212 &212605723248555182
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 28ace2a0a2106d24f8a54d276b303360, type: 3}
-  m_Color: {r: 0.9338235, g: 0.27465397, b: 0.27465397, a: 1}
+  m_Color: {r: 0.89154035, g: 0.9411765, b: 0.041522477, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
